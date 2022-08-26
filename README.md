@@ -11,8 +11,9 @@ https://download.openmmlab.com/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50_fpn_
     --video-path /home/swli2/mmpose/vis_results/crop_video76_256.mp4 \
     --out-video-root vis_results
 ``` 
+Reference: 
 ```
-Reference: @misc{mmpose2020,
+@misc{mmpose2020,
     title={OpenMMLab Pose Estimation Toolbox and Benchmark},
     author={MMPose Contributors},
     howpublished = {\url{https://github.com/open-mmlab/mmpose}},

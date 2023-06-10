@@ -33,13 +33,13 @@ for i in [2]:
         cmd = 'ffmpeg -ss {0} -i "{1}" -ss {0} -i "{2}" -map 0:v -map 1:a -ss {3} -t {4} -c:v libx264 -c:a aac {5}.mp4'.format(early_start, video_url, audio_url, trim, diff, name)
         os.system(cmd)
         print("center face")
-        cmd = 'python ~/mmpose/demo/zitong_crop.py \
+        cmd = 'python ~/mmpose/demo/crop.py \
                 ~/mmpose/demo/mmdetection_cfg/faster_rcnn_r50_fpn_coco.py \
                 https://download.openmmlab.com/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50_fpn_1x_coco/faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth \
                 ~/mmpose/configs/wholebody/2d_kpt_sview_rgb_img/topdown_heatmap/coco-wholebody/hrnet_w48_coco_wholebody_384x288_dark_plus.py \
                 https://download.openmmlab.com/mmpose/top_down/hrnet/hrnet_w48_coco_wholebody_384x288_dark-f5726563_20200918.pth \
-                --video-path /home/swli2/slowfast/data/{0}.mp4 \
-                --out-video-root ~/slowfast/data'.format(name)
+                --video-path /data/{0}.mp4 \
+                --out-video-root ~/data'.format(name)
         os.system(cmd)
         print("resample to 20 fps")
         cmd = 'ffmpeg -i vis_{0}.mp4 -filter:v fps=20 {0}_20fps.mp4'.format(name)
@@ -58,7 +58,7 @@ for i in [2]:
                 https://download.openmmlab.com/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50_fpn_1x_coco/faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth \
                 ~/mmpose/configs/wholebody/2d_kpt_sview_rgb_img/topdown_heatmap/coco-wholebody/hrnet_w48_coco_wholebody_384x288_dark_plus.py \
                 https://download.openmmlab.com/mmpose/top_down/hrnet/hrnet_w48_coco_wholebody_384x288_dark-f5726563_20200918.pth \
-                --video-path /home/swli2/slowfast/data/{0}_final.mp4'.format(name)
+                --video-path /data/{0}_final.mp4'.format(name)
         os.system(cmd)
         
         

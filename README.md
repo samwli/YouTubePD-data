@@ -3,4 +3,4 @@ Construct and preprocess video dataset for Parkinson's disease (PD) from YouTube
 
 The region-level binary annotations are provided in a dictionary format in `region_video_annotations.pkl`, to be loaded into the model. Each video is a key in the dictionary; the corresponding value is an array of strings. Each string is in the format `annotated_frame_num/total_frame_num, region_index, severity, confidence`. The training code directly uses the file in this format to load in region annotations.
 
-Examples of the processed videos can be found in the `processed_examples` folder. Two example videos are provided, with and without visualized bboxes for each.
+Examples of the processed videos can be found in the `processed_examples` folder. Example videos of two patients are provided, with and without visualized bboxes for each.
